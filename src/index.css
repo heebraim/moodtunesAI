@@ -1,0 +1,407 @@
+/* Add to styles.css */
+.full-track-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.audio-player {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.playing-info {
+  color: #1DB954;
+  font-size: 0.9rem;
+}
+
+.unavailable-message {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  padding: 10px;
+  background: #ffecec;
+  border-radius: 8px;
+}
+
+/* styles.css */
+
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  color: #1DB954;
+  margin: 1rem 0;
+  font-size: 2rem;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 200;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.mood-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #1DB954;
+  border-radius: 50px;
+  font-size: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.mood-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+}
+
+
+.generate-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #1DB954;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.generate-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+.generate-btn:disabled {
+  background: #b3b3b3;
+  cursor: not-allowed;
+}
+
+.playlist-container {
+  flex: 1;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 15px;
+  overflow-y: auto;
+  max-height: calc(100vh - 280px);
+  margin-top: 1rem;
+}
+
+.track-list {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.track-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.track-card:hover {
+  transform: translateY(-2px);
+}
+
+.track-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.track-info {
+  flex: 1;
+}
+
+.track-title {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.track-artist {
+  margin: 5px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin: 15px 0;
+  padding: 1rem;
+  background: #ffecec;
+  border-radius: 8px;
+}
+
+.loading-text {
+  text-align: center;
+  color: #1DB954;
+  padding: 1rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  margin: auto;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1DB954;
+  padding: 0.5rem;
+}
+
+.spotify-player {
+  width: 100%;
+  height: 380px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header {
+    font-size: 1.75rem;
+    padding: 0.5rem 0;
+    top: 0;
+  }
+  .app {
+    padding: 20px 10px;
+  }
+
+ 
+  .input-container {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .input-group {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+
+  .mood-input {
+    margin: 0 !important;
+    padding: 12px 15px !important;
+    width: 100% !important;
+  }
+
+ 
+
+  .mood-input, .generate-btn {
+    border-radius: 25px;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .spotify-player {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 15px;
+    gap: 1.5rem;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .track-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .track-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .input-group {
+    padding: 0 10px; /* Added */
+  }
+
+  .mood-input {
+    padding: 0.8rem 1rem; /* Adjusted */
+  }
+}
+
+
+.loading-dots {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dot {
+  animation: dotPulse 1.4s infinite;
+  opacity: 0;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+
+/* dynamism */
+
+/* Dynamic Background */
+.app {
+  position: relative;
+  background-size: 400% 400%;
+  transition: background 0.5s ease;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mood Monster */
+.mood-monster-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+  animation: float 4s ease-in-out infinite;
+  z-index: 300;
+  background-color:white;
+  border-radius: 50%;
+}
+
+.mood-monster {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Particles */
+.particle {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  animation: particle-float 1s ease-out forwards;
+  
+}
+
+@keyframes particle-float {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mood-monster-container {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .mood-monster text {
+    font-size: 30px;
+  }
+}
